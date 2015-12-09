@@ -1,0 +1,38 @@
+{
+  "name": "SystimeCoon",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Systime shredded and hacked by The Coon",
+  "homepage_url": "https://github.com/Chropez/SystimeCoon",
+  "icons": {
+    "16": "chrome/img/icon16.png",
+    "19": "chrome/img/icon19.png",
+    "38": "chrome/img/icon38.png",
+    "48": "chrome/img/icon48.png",
+    "128": "chrome/img/icon128.png"
+  },
+  "background": {
+    "scripts": ["chrome/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://tidrapportering.evry.se/2005.htm"
+      ],
+      "js": ["chrome/bootstrap.js"],
+      "css": ["chrome/loading.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "page_action": {},
+  "permissions": [
+    "tabs",
+    "https://tidrapportering.evry.se/2005.htm"
+  ],
+  "web_accessible_resources": [
+    "index.html",
+    "assets/*",
+    "fonts/*",
+    "img/*"
+  ]
+}
